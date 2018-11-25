@@ -1,31 +1,22 @@
 import { ValidatorFn, AbstractControl } from '@angular/forms';
 
-function isPrime(n): boolean {
-  if (isNaN(n) || !isFinite(n) || n % 1 || n < 2) {
-    return false;
-  }
-  if (n % 2 === 0) {
-    return n === 2;
-  }
-  if (n % 3 === 0) {
-    return n === 3;
-  }
-  const m = Math.sqrt(n);
-  for (let i = 5; i <= m; i += 6) {
-    if (n % i === 0) {
-      return false;
-    }
-    if (n % (i + 2) === 0) {
+// Credit for this function:
+// https://stackoverflow.com/a/17390131/2044
+function isPrime(number) {
+  let start = 2;
+  const limit = Math.sqrt(number);
+  while (start <= limit) {
+    if (number % start++ < 1) {
       return false;
     }
   }
-  return true;
+  return number > 1;
 }
 
 export class NumberValidators {
   static isPrimeNumber(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: boolean } | null => {
-      if (isPrime(control.value) === true) {
+      if (isPrime(control.value)) {
         return null;
       }
       return {
