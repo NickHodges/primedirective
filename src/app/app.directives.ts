@@ -6,9 +6,9 @@ import { KeyValues } from './app.consts';
 
 @Directive({
   // tslint:disable-next-line:directive-selector
-  selector: '[primesonly]'
+  selector: '[numbersonly]'
 })
-export class PrimeNumbersOnlyDirective {
+export class NumbersOnlyDirective {
   inputElement: HTMLElement;
   constructor(public el: ElementRef) {
     this.inputElement = el.nativeElement;
