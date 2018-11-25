@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  FormControl
+} from '@angular/forms';
 import { NumberValidators } from './app.validators';
 
 @Component({
@@ -9,25 +14,31 @@ import { NumberValidators } from './app.validators';
 })
 export class AppComponent implements OnInit {
   title = 'The Prime Directive';
+  noPrimeInput: FormControl;
+  showLabel = false;
+  inputValue = 0;
 
   formModel: FormGroup;
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
+    this.noPrimeInput = new FormControl('', [
+      Validators.required,
+      NumberValidators.isPrimeNumber()
+    ]);
+
     this.formModel = this.fb.group({
-      noPrimeInput: [
-        '',
-        [Validators.required, NumberValidators.isPrimeNumber()]
-      ]
+      noPrimeInput: this.noPrimeInput
     });
   }
 
   onSubmit() {
-    if (this.formModel.valid) {
-      console.log('valid:', this.formModel.value);
-    } else {
-      console.log('invalid: ', this.formModel.value);
-    }
+    this.inputValue = this.formModel.value.noPrimeInput;
+    this.showLabel = true;
+  }
+
+  onFocus() {
+    this.showLabel = false;
   }
 }
