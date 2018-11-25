@@ -41,4 +41,8 @@ export class AppComponent implements OnInit {
   onFocus() {
     this.showLabel = false;
   }
+
+  onReset() {
+    this.showLabel = false;
+  }
 }

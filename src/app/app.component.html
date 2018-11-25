@@ -4,7 +4,7 @@
 </div>
 <div class="main-div">
   <mat-card class="z-depth center">
-    <form [formGroup]="formModel" (ngSubmit)="onSubmit()">
+    <form [formGroup]="formModel" (ngSubmit)="onSubmit()" (reset)="onReset()">
       <mat-form-field class="half-width">
         <div>
           <input
