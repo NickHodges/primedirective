@@ -1,4 +1,4 @@
-// Origingally aken from https://github.com/changhuixu/ngx-digit-only/blob/master/projects/uiowa/digit-only/src/lib/digit-only.directive.ts
+// Origingally taken from https://github.com/changhuixu/ngx-digit-only/blob/master/projects/uiowa/digit-only/src/lib/digit-only.directive.ts
 // Used under the MIT License
 
 import { Directive, ElementRef, HostListener } from '@angular/core';
