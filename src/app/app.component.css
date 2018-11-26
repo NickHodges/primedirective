@@ -1,9 +1,9 @@
-.half-width {
-  width: 50%;
+.full-width {
+  width: 100%;
 }
 
 .center {
-  width: 75%;
+  width: 50%;
   margin: 10px auto;
 }
 
