@@ -31,7 +31,7 @@ export class NumbersOnlyDirective {
       return;
     }
 
-    // If they key is a number, prevent default
+    // If the key is a number, prevent default
     if (!(KeyValues.Numbers.indexOf(e.keyCode) !== -1)) {
       e.preventDefault();
     }
