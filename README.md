@@ -2,7 +2,9 @@
 
 ## Purpose
 
-The purpose of this project is to illustrate both custom directives and custom validators
+The purpose of this project is to illustrate both custom directives and custom validators in Angular
+
+The current version supported is Angular 7.1.
 
 ## What It Does
 
