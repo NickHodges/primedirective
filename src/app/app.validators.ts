@@ -2,15 +2,15 @@ import { ValidatorFn, AbstractControl } from '@angular/forms';
 
 // Credit for this function:
 // https://stackoverflow.com/a/17390131/2044
-function isPrime(number) {
-  let start = 2;
-  const limit = Math.sqrt(number);
+function isPrime(aNumber: number): boolean {
+  let start: number = 2;
+  const limit: number = Math.sqrt(aNumber);
   while (start <= limit) {
-    if (number % start++ < 1) {
+    if (aNumber % start++ < 1) {
       return false;
     }
   }
-  return number > 1;
+  return aNumber > 1;
 }
 
 export class NumberValidators {
@@ -24,4 +24,6 @@ export class NumberValidators {
       };
     };
   }
+
+  // You could add more NumberValidator functions here.....
 }

@@ -66,7 +66,7 @@ export class KeyValues {
   public static readonly Minus: number = 189;
 
   // Key arrays
-  public static readonly navigationKeys = [
+  public static readonly navigationKeys: number[] = [
     KeyValues.Home,
     KeyValues.End,
     KeyValues.Left,
@@ -75,14 +75,14 @@ export class KeyValues {
     KeyValues.Down
   ];
 
-  public static readonly cutPasteKeys = [
+  public static readonly cutPasteKeys: number[] = [
     KeyValues.A,
     KeyValues.C,
     KeyValues.V,
     KeyValues.X
   ];
 
-  public static readonly Numbers = [
+  public static readonly Numbers: number[] = [
     KeyValues.One,
     KeyValues.Two,
     KeyValues.Three,
@@ -106,7 +106,7 @@ export class KeyValues {
     KeyValues.NumPad9
   ];
 
-  public static readonly Letters = [
+  public static readonly Letters: number[] = [
     KeyValues.A,
     KeyValues.B,
     KeyValues.C,
@@ -135,7 +135,7 @@ export class KeyValues {
     KeyValues.Z
   ];
 
-  public static readonly OkForInputControl = [
+  public static readonly OkForInputControl: number[] = [
     KeyValues.Delete,
     KeyValues.Backspace,
     KeyValues.Tab,
@@ -143,7 +143,7 @@ export class KeyValues {
     KeyValues.Enter
   ];
 
-  public static readonly OkForPhoneInputControl = KeyValues.OkForInputControl.concat(
+  public static readonly OkForPhoneInputControl: number[] = KeyValues.OkForInputControl.concat(
     KeyValues.Minus
   );
 }

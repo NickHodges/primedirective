@@ -38,7 +38,7 @@ export class NumbersOnlyDirective {
   }
 
   @HostListener('paste', ['$event'])
-  onPaste(event: ClipboardEvent) {
+  onPaste(event: ClipboardEvent): void {
     event.preventDefault();
     const pastedInput: string = event.clipboardData
       .getData('text/plain')
@@ -47,9 +47,9 @@ export class NumbersOnlyDirective {
   }
 
   @HostListener('drop', ['$event'])
-  onDrop(event: DragEvent) {
+  onDrop(event: DragEvent): void {
     event.preventDefault();
-    const textData = event.dataTransfer.getData('text').replace(/\D/g, '');
+    const textData: string = event.dataTransfer.getData('text').replace(/\D/g, '');
     this.inputElement.focus();
     document.execCommand('insertText', false, textData);
   }

@@ -13,16 +13,16 @@ import { NumberValidators } from './app.validators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'The Prime Directive';
+  title: string = 'The Prime Directive';
   noPrimeInput: FormControl;
-  showLabel = false;
-  inputValue = 0;
+  showLabel: boolean = false;
+  inputValue: number = 0;
 
   formModel: FormGroup;
 
   constructor(private fb: FormBuilder) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.noPrimeInput = new FormControl('', [
       Validators.required,
       NumberValidators.isPrimeNumber()
@@ -33,16 +33,16 @@ export class AppComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  onSubmit(): void {
     this.inputValue = this.formModel.value.noPrimeInput;
     this.showLabel = true;
   }
 
-  onFocus() {
+  onFocus(): void {
     this.showLabel = false;
   }
 
-  onReset() {
+  onReset(): void {
     this.showLabel = false;
   }
 }
