@@ -2,10 +2,7 @@
   <h1>Welcome to {{ title }}!</h1>
 </div>
 <div class="main-div">
-  <mat-card
-    class="z-depth center"
-    [ngStyle]="{ 'background-color': '#FFFF99' }"
-  >
+  <mat-card class="center" [ngStyle]="{ 'background-color': '#FFFF99' }">
     <form [formGroup]="formModel" (ngSubmit)="onSubmit()" (reset)="onReset()">
       <mat-form-field class="full-width">
         <div>
