@@ -25,5 +25,5 @@ export class NumberValidators {
     };
   }
 
-  // You could add more NumberValidator functions here.....
+  // You could add more NumberValidator functions here, like phone(), etc......
 }
