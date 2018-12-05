@@ -7,3 +7,19 @@ body {
   font-size: 250%;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+
+body::after {
+  background: url('assets/NCC1701.jpg');
+  content: '';
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
