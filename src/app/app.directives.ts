@@ -49,8 +49,12 @@ export class NumbersOnlyDirective {
   @HostListener('drop', ['$event'])
   onDrop(event: DragEvent): void {
     event.preventDefault();
-    const textData: string = event.dataTransfer.getData('text').replace(/\D/g, '');
-    this.inputElement.focus();
-    document.execCommand('insertText', false, textData);
+    if (event.dataTransfer) {
+      const textData: string = event.dataTransfer
+        .getData('text')
+        .replace(/\D/g, '');
+      this.inputElement.focus();
+      document.execCommand('insertText', false, textData);
+    }
   }
 }
